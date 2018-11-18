@@ -5,7 +5,6 @@ import {
   ChainBController,
   ChainCController
 } from "./Controller";
-import "./App.scss";
 
 const StrategyTypes = {
   ChainA: "Chain A",
