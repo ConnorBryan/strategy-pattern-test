@@ -1,3 +1,22 @@
+/**
+ * All commonalities are built inside core,
+ * which is then augmented by a combination of different props
+ * to create specific functionality for a given chain.
+ *
+ * Core:
+ * - Address field
+ * - Input field
+ * - Submit button
+ *
+ * Chain A:
+ * - No additions.
+ *
+ * Chain B:
+ * - Has a token dropdown.
+ *
+ * Chain C:
+ * - Has a paymentID field.
+ */
 import React, { Component } from "react";
 
 const noop = function() {
@@ -13,6 +32,10 @@ function bindSlots(slots) {
 
 export default class Controller extends Component {
   static defaultProps = {
+    name: "",
+    service: {
+      sendTransaction: () => {}
+    },
     state: {},
     methods: [],
     slots: {
@@ -188,21 +211,3 @@ export const ChainCController = () => (
     }}
   />
 );
-/* === */
-
-/* === */
-/**
- * Core:
- * - Address field
- * - Input field
- * - Submit button
- *
- * Chain A:
- * - No additions.
- *
- * Chain B:
- * - Has a token dropdown.
- *
- * Chain C:
- * - Has a paymentID field.
- */
